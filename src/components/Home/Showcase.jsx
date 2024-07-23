@@ -7,7 +7,7 @@ import ForYou from './ForYou';
 
 const Showcase = () => {
     return (
-        <section style={{ paddingTop: "170px" }}>
+        <section style={{ paddingTop: "180px" }}>
             <div className="container-md">
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={showcasePopularLargeGrid.spacing} columns={showcasePopularLargeGrid.column}>

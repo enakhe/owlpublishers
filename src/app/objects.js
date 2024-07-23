@@ -1,10 +1,5 @@
 export const pages = [
     {
-        name: 'Home',
-        route: '/',
-    },
-
-    {
         name: 'Memebership',
         route: '/memebership',
     },
@@ -21,6 +16,7 @@ export const pages = [
 ];
 
 export const tags = [
+    "Home",
     "For you",
     "Entertainment",
     "News",

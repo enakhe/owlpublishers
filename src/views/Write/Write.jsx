@@ -1,13 +1,13 @@
 import React from 'react'
-import Header from '../../components/Home/Header'
 import { CssBaseline } from '@mui/material'
 import TextEditor from '../../components/Write/TextEditor'
+import WriteHeader from '../../components/Write/WriteHeader'
 
 const Write = () => {
     return (
         <section>
             <React.Fragment>
-                <Header />
+                <WriteHeader />
                 <CssBaseline />
                 <TextEditor />
             </React.Fragment>

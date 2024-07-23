@@ -27,7 +27,6 @@ const TextEditor = () => {
         description: localStorage.getItem('description'),
         body: localStorage.getItem('body')
     })
-    console.log(formData);
 
     const [errors, setErrors] = useState({});
     const { title, description, body } = formData;
@@ -56,6 +55,17 @@ const TextEditor = () => {
         dispatch(reset());
     }, [user, isError, isSuccess, message, navigate, dispatch]);
 
+    const handleSave = () => {
+        if (title === null || description === null) {
+            toast.error("Provide article title and description");
+        } else {
+            setOpen(false);
+        }
+
+        console.log(title, description)
+    }
+
+
     const handleClose = () => {
         setOpen(false);
     }
@@ -74,6 +84,9 @@ const TextEditor = () => {
         temp.description = description !== "" ? "" : "Please enter the article description";
         temp.body = body !== "" ? "" : "Please enter the article body";
         setErrors(temp);
+        if (title === null || description === null) {
+            setOpen(true);
+        }
         return Object.values(temp).every(x => x === '');
     }
 
@@ -100,10 +113,11 @@ const TextEditor = () => {
 
     return (
         <>
-            <Dialog open={open}
+            <Dialog
+                open={open}
                 TransitionComponent={Transition}
                 keepMounted
-                // onClose={handleClose}
+                // onClose={handleSave}
                 disableEscapeKeyDown={true}
                 aria-describedby="alert-dialog-slide-description">
                 <DialogTitle>Article Fields</DialogTitle>
@@ -138,7 +152,8 @@ const TextEditor = () => {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Save</Button>
+                    <Button color='error' onClick={handleClose}>Cancel</Button>
+                    <Button onClick={handleSave}>Save</Button>
                 </DialogActions>
             </Dialog>
 

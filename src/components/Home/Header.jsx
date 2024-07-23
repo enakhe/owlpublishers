@@ -2,21 +2,37 @@ import { useState } from 'react';
 import DrawerMenu from './DrawerMenu';
 import logo from '../../logo.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button, Tab, Tabs, useMediaQuery, useTheme, IconButton, Box, Tooltip, Avatar, Menu, MenuItem, Divider, ListItemIcon } from '@mui/material';
+import {
+    AppBar,
+    Toolbar,
+    Typography,
+    Button,
+    Tab,
+    Tabs,
+    useMediaQuery,
+    useTheme,
+    IconButton,
+    Box,
+    Tooltip,
+    Avatar,
+    Menu,
+    MenuItem,
+    Divider,
+    ListItemIcon
+} from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../../features/auth/authSlice';
 import SearchComp from '../Home/SearchComp';
 import SearchIcon from '@mui/icons-material/Search';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-import { pages, tags } from '../../app/objects';
+import { MyTabs } from '../../functions/Home/TabsWithLinkFunctions';
+import TagsTabs from '../utils/TagsTabs';
 
 const Header = () => {
-    const [value, setValue] = useState(0);
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
-    const [tagValue, setTagValue] = useState(0);
     const theme = useTheme();
     const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -30,10 +46,6 @@ const Header = () => {
         navigate('/');
     }
 
-    const handleChange = (event, newValue) => {
-        setTagValue(newValue);
-    };
-
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -44,7 +56,7 @@ const Header = () => {
 
     return (
         <AppBar sx={{ background: '#ffffff', boxShadow: "none", borderBottom: "1.5px solid #e8eaed" }}>
-            <Toolbar>
+            <Toolbar sx={{ marginTop: 2 }}>
                 <Link to='/'>
                     <img
                         src={logo}
@@ -74,19 +86,7 @@ const Header = () => {
                         </>
                     ) : (
                         <>
-                            <Tabs 
-                                sx={{ marginLeft: "auto", color: "#444746" }} 
-                                value={value} 
-                                onChange={(e, value) => setValue(value)} 
-                                indicatorColor='primary'>
-                                {
-                                    pages.map((page, index) => (
-                                        <Link to={page.route} key={index} style={{ color: "#444746" }}>
-                                            <Tab key={index} label={page.name} sx={{ textTransform: "capitalize", color: "#444746" }} />
-                                        </Link>
-                                    ))
-                                }
-                            </Tabs>
+                            <MyTabs />
                             {
                                 user ? (
                                     <>
@@ -164,7 +164,7 @@ const Header = () => {
                                     </>
                                 ) : (
                                     <>
-                                        {/* <Link style={{ color: "#ffff" }} to='/signin'>
+                                        <Link style={{ color: "#ffff" }} to='/signin'>
                                             <Button sx={{ textTransform: "capitalize" }} size='large' variant="contained">
                                                 Sign In
                                             </Button>
@@ -174,7 +174,7 @@ const Header = () => {
                                             <Button sx={{ marginLeft: "10px", textTransform: "capitalize" }} size='large' variant="outlined">
                                                 Get started
                                             </Button>
-                                        </Link> */}
+                                        </Link>
                                     </>
                                 )
                             }
@@ -182,15 +182,7 @@ const Header = () => {
                     )
                 }
             </Toolbar>
-            <div className="center">
-                <Tabs value={tagValue} onChange={handleChange} variant="scrollable" scrollButtons="auto" aria-label="scrollable auto tabs example">
-                    {
-                        tags.map((tag, index) => (
-                            <Tab key={index} label={tag} sx={{ textTransform: "capitalize" }} />
-                        ))
-                    }
-                </Tabs>
-            </div>
+            <TagsTabs />
         </AppBar >
     );
 }

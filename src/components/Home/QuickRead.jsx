@@ -85,8 +85,7 @@ const QuickRead = () => {
                                     expand={expanded}
                                     onClick={handleExpandClick}
                                     aria-expanded={expanded}
-                                    aria-label="show more"
-                                >
+                                    aria-label="showmore">
                                     <ExpandMoreIcon />
                                 </ExpandMore>
                             </CardActions>
@@ -105,7 +104,7 @@ const QuickRead = () => {
                         <Item sx={{ minHeight: "435px" }}>
                             <CardHeader
                                 avatar={
-                                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe2">
                                         R
                                     </Avatar>
                                 }
@@ -138,8 +137,7 @@ const QuickRead = () => {
                                     expand={expanded}
                                     onClick={handleExpandClick}
                                     aria-expanded={expanded}
-                                    aria-label="show more"
-                                >
+                                    aria-label="show more">
                                     <ExpandMoreIcon />
                                 </ExpandMore>
                             </CardActions>
@@ -158,7 +156,7 @@ const QuickRead = () => {
                         <Item sx={{ minHeight: "435px" }}>
                             <CardHeader
                                 avatar={
-                                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe4">
                                         R
                                     </Avatar>
                                 }
@@ -211,7 +209,7 @@ const QuickRead = () => {
                         <Item sx={{ minHeight: "435px" }}>
                             <CardHeader
                                 avatar={
-                                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe3">
                                         R
                                     </Avatar>
                                 }

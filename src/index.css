@@ -98,6 +98,12 @@ a {
     mask: radial-gradient(farthest-side, #0000 calc(100% - 11.5px), #000 0);
 }
 
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @keyframes spinner-c7wet2 {
     100% {
         transform: rotate(1turn);
