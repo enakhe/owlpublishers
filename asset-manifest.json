@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/owlpublishers/static/css/main.8ac1c393.css",
-    "main.js": "/owlpublishers/static/js/main.259b1a7e.js",
+    "main.js": "/owlpublishers/static/js/main.21c387dd.js",
     "static/js/787.9e9f4ffd.chunk.js": "/owlpublishers/static/js/787.9e9f4ffd.chunk.js",
     "static/media/logo.png": "/owlpublishers/static/media/logo.5a1620df514a2cf70b72.png",
     "static/media/author.jpg": "/owlpublishers/static/media/author.b38ffe7e5fdf96e5510e.jpg",
@@ -9,11 +9,11 @@
     "static/media/mail.svg": "/owlpublishers/static/media/mail.32ac5f8f1f1dfae6b63999e5c2b41254.svg",
     "index.html": "/owlpublishers/index.html",
     "main.8ac1c393.css.map": "/owlpublishers/static/css/main.8ac1c393.css.map",
-    "main.259b1a7e.js.map": "/owlpublishers/static/js/main.259b1a7e.js.map",
+    "main.21c387dd.js.map": "/owlpublishers/static/js/main.21c387dd.js.map",
     "787.9e9f4ffd.chunk.js.map": "/owlpublishers/static/js/787.9e9f4ffd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8ac1c393.css",
-    "static/js/main.259b1a7e.js"
+    "static/js/main.21c387dd.js"
   ]
 }
